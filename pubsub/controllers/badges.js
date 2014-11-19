@@ -10,7 +10,6 @@ exports.save = function(req,res,next){
     next();
   });
 };
-exports.send = function(){
-
-
+exports.send = function(req,res,next){
+  next();
 };
