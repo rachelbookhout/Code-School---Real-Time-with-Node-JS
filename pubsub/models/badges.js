@@ -32,3 +32,13 @@ exports.send = function(badges,callback){
   badges.forEach(broadcast.send);
   callback(null,null);
 };
+
+/**
+get 10 badges from redis
+*/
+exports.get = function(callback){
+  redis.lrange('badges', 0, -1, function(err,data){
+    if (err) return callback(err,null);
+    callback(null,data.map(JSON.parse));
+  });
+};

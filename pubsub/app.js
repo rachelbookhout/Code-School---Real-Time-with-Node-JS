@@ -10,4 +10,6 @@ app.post('/', badges.save, badges.send);
 
 app.get('/badges', badges.get);
 
-app.listen(8000);
+app.listen(8000, function(){
+  console.log('server is listening');
+});
